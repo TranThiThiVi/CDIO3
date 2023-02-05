@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="thanhtoan.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      
+    <h1>Giỏ hàng -Thanh toán</h1>
+
+<div class="shopping-cart">
+
+  <div  class="column-labels">
+    <label class="product-image">Ảnh</label>
+    <label class="product-details">Sản Phẩm</label>
+    <label class="product-price">Gía</label>
+    <label class="product-quantity">Số lượng</label>
+    <label class="product-removal">Xóa</label>
+    <label class="product-line-price">Tổng</label>
+  </div>
+
+  <div class="product">
+    <div class="product-image">
+      <img src="https://hipbcoffee.com:8443/storage/public/1-ca-phe-sua-1586320543.jpg">
+    </div>
+    <div class="product-details">
+      <div class="product-title">Cà Phê sữa</div>
+      <p class="product-description">The best dog bones of all time. Holy crap. Your dog will be begging for these things! I got curious once and ate one myself. I'm a fan.</p>
+    </div>
+    <div class="product-price">27.000đ</div>
+    <div class="product-quantity">
+      <input type="number" value="2" min="1">
+    </div>
+    <div class="product-removal">
+      <button class="remove-product" onclick="thongbao()">
+    Xóa
+      </button>
+    </div>
+    <div class="product-line-price">54.000đ</div>
+  </div>
+
+  <div class="product">
+    <div class="product-image">
+      <img src="http://gongcha.com.vn/wp-content/uploads/2018/02/Tr%C3%A0-s%E1%BB%AFa-Hokkaido-2.png">
+    </div>
+    <div class="product-details">
+      <div class="product-title">Trà sữa Hokaido</div>
+      <p class="product-description">Who doesn't like lamb and rice? We've all hit the halal cart at 3am while quasi-blackout after a night of binge drinking in Manhattan. Now it's your dog's turn!</p>
+    </div>
+    <div class="product-price">30.000đ</div>
+    <div class="product-quantity">
+      <input type="number" value="1" min="1">
+    </div>
+    <div class="product-removal">
+      <button class="remove-product" onclick="thongbao()">
+        Xóa
+      </button>
+    </div>
+    <div class="product-line-price">60.000đ</div>
+  </div>
+ 
+  <div class="totals">
+    <div class="totals-item">
+      <label>Tổng cộng</label>
+      <div class="totals-value" id="cart-subtotal">114.000đ</div>
+    </div>
+    <div class="totals-item">
+      <label>giảm giá (5%)</label>
+      <div class="totals-value" id="cart-tax">4.000đ</div>
+    </div>
+    <div class="totals-item">
+      <label>Phí ship</label>
+      <div class="totals-value" id="cart-shipping">15.000đ</div>
+    </div>
+    <div class="totals-item totals-item-total">
+      <label>Tổng</label>
+      <div class="totals-value" id="cart-total">125.000đ</div>
+    </div>
+  </div>
+      <a href="../../home/home.html"><button class="checkout" onclick="thongbao()">Mua</button></a>
+    
+
+</div>
+<!-- <script>
+    var taxRate = 0.05;
+var shippingRate = 15.00; 
+var fadeTime = 300;
+
+
+/* Assign actions */
+$('.product-quantity input').change( function() {
+  updateQuantity(this);
+});
+
+$('.product-removal button').click( function() {
+  removeItem(this);
+});
+
+
+/* Recalculate cart */
+function recalculateCart()
+{
+  var subtotal = 0;
+  
+  /* Sum up row totals */
+  $('.product').each(function () {
+    subtotal += parseFloat($(this).children('.product-line-price').text());
+  });
+  
+  /* Calculate totals */
+  var tax = subtotal * taxRate;
+  var shipping = (subtotal > 0 ? shippingRate : 0);
+  var total = subtotal + tax + shipping;
+  
+  /* Update totals display */
+  $('.totals-value').fadeOut(fadeTime, function() {
+    $('#cart-subtotal').html(subtotal.toFixed(2));
+    $('#cart-tax').html(tax.toFixed(2));
+    $('#cart-shipping').html(shipping.toFixed(2));
+    $('#cart-total').html(total.toFixed(2));
+    if(total == 0){
+      $('.checkout').fadeOut(fadeTime);
+    }else{
+      $('.checkout').fadeIn(fadeTime);
+    }
+    $('.totals-value').fadeIn(fadeTime);
+  });
+}
+
+
+/* Update quantity */
+function updateQuantity(quantityInput)
+{
+  /* Calculate line price */
+  var productRow = $(quantityInput).parent().parent();
+  var price = parseFloat(productRow.children('.product-price').text());
+  var quantity = $(quantityInput).val();
+  var linePrice = price * quantity;
+  
+  /* Update line price display and recalc cart totals */
+  productRow.children('.product-line-price').each(function () {
+    $(this).fadeOut(fadeTime, function() {
+      $(this).text(linePrice.toFixed(2));
+      recalculateCart();
+      $(this).fadeIn(fadeTime);
+    });
+  });  
+}
+
+
+/* Remove item from cart */
+function removeItem(removeButton)
+{
+  /* Remove row from DOM and recalc cart total */
+  var productRow = $(removeButton).parent().parent();
+  productRow.slideUp(fadeTime, function() {
+    productRow.remove();
+    recalculateCart();
+  });
+}
+function thongbao(){
+    alert('Thành công!');
+}
+</script> -->
+  </body>
+</html>
